@@ -37,6 +37,9 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+![fulladdde](https://github.com/user-attachments/assets/2053372b-810e-43a8-9840-e5e6ebb86619)
+
+![fulsubde](https://github.com/user-attachments/assets/94f038ed-67c9-4eb6-830b-937b5bd7f267)
 
 **Procedure**
 
@@ -44,12 +47,54 @@ Write the detailed procedure here
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+Developed by: Sadhana S RegisterNumber: 212224230234
+```
+module exp4(sum,cout,a,b,cin);
+    output sum;
+    output cout;
+    input a;
+    input b;
+    input cin;
+
+	 wire w1,w2,w3;
+	 assign w1=a^b;
+	 assign w2=a&b;
+	 assign w3=w1&cin;
+	 assign sum=w1^cin;
+	 assign cout=w2|w3;
+endmodule
+
+module exp4b(df, bo, a, b, bin);
+    output df;
+    output bo;
+    input a;
+    input b;
+    input bin;
+	wire w1,w2,w3;
+	 assign w1=a^b;
+	 assign w2=(~a&b);
+	 assign w3=(~w1&bin);
+	 assign df=w1^bin;
+	 assign bo=w2|w3;
+
+endmodule
+```
 
 **RTL Schematic**
+Exp4a
+![exp4](https://github.com/user-attachments/assets/7879e8de-3cd4-49d1-a41e-dc6111bc729b)
+Exp4b
+![exp4b](https://github.com/user-attachments/assets/8ce6b0a4-8fe6-4893-b89c-95a563e44ab8)
+
 
 **Output Timing Waveform**
+Exp4a
+![deexp4a](https://github.com/user-attachments/assets/937ace61-0eac-4c6d-9b47-738976768c2a)
+Exp4b
+![deexp4b](https://github.com/user-attachments/assets/f8f2a76e-3052-4609-8164-7baf678daa35)
+
+
 
 **Result:**
 
